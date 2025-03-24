@@ -1,0 +1,6 @@
+[submodule "data_service"]
+	path = data_service
+	url = https://github.com/modip-2-0/data_service.git
+[submodule "docking_service"]
+	path = docking_service
+	url = https://github.com/modip-2-0/docking_service.git
