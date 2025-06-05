@@ -4,3 +4,6 @@
 [submodule "docking_service"]
 	path = docking_service
 	url = https://github.com/modip-2-0/docking_service.git
+[submodule "frontend"]
+	path = frontend
+	url = https://github.com/modip-2-0/frontend.git
