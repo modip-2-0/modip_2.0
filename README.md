@@ -31,7 +31,7 @@ Key capabilities:
 # Clone main repository (recursive to include submodules)
 git clone --recursive https://github.com/modip-2-0/modip_metarepo.git
 
-cd modip-metarepo
+cd modip_metarepo
 
 # If you cloned non-recursively, initialize submodules:
 git submodule update --init --recursive
