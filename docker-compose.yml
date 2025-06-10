@@ -1,17 +1,25 @@
 services:
+  frontend:
+    build: ./frontend
+    volumes:
+      - ./frontend:/app
+    ports:
+      - "8501:8501"
+    depends_on:
+      - data_service
+    networks:
+      - modip_network
   
-  api:
-    build: .
-    stdin_open: true
-    tty: true
+  data_service:
+    build: ./data_service
     ports:
       - "8000:8000"    
     depends_on:      
       - mongodb
     volumes:
-      - .:/app
-    entrypoint: ["/app/start.sh"]   
-    
+      - ./data_service:/app    
+    networks:
+      - modip_network
       
   mongodb:
     image: mongo:latest
@@ -19,8 +27,12 @@ services:
       - "27017:27017"
     volumes:
       - data:/data/db
+    networks:
+      - modip_network
+
+networks:
+  modip_network:
+    driver: bridge
 
 volumes:
   data:
-
-
